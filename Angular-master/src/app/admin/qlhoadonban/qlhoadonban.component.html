@@ -1,0 +1,68 @@
+
+
+<div>
+  
+    <div class="card shadow mb-4">
+                           <div class="card-header py-3">
+                               <h6 class="m-0 font-weight-bold text-primary">Quản lý hóa đơn bán</h6>
+                           </div>
+                           
+                           <div class="card-body">
+                             <a class="btn btn-dark fa fa-plus" [routerLink]="['/admin/addhoadonban']">Thêm</a>
+   
+                               <div class="table-responsive">
+                                   <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                       <thead>
+                                           <tr>
+                                             <th>STT</th>
+                                             <th>id</th>
+                                             <th>Mã khách</th>
+                                             <th>Họ tên</th>
+                                             <th>Địa chỉ</th>
+                                             <th>Số điện thoại</th>
+                                             <th>Email</th>
+                                             <th>Ngày đặt</th>
+                                             <th>Tổng</th>
+                                             <th>Trạng thái</th>
+                                             <th></th>
+                                           </tr>
+                                       </thead>
+                                       
+                                       <tbody>
+                                           <tr *ngFor="let item of subjects;let i = index">
+                                               
+                                               <td>{{ i+1 }}</td>
+                                               <td>{{ item.id }}</td>
+                                               
+                                               <td>{{ item.MaKhachHang }}</td>
+                                               <td>{{ item.Hoten }}</td>
+                                               <td>{{ item.sdt }}</td>
+                                               <td>{{ item.Email }}</td>
+                                               <td>{{ item.Diachi }}</td>
+                                               <td>{{ item.Ngaydat }}</td>
+                                               <td>{{ item.Tong }}</td>
+                                               <td>{{ item.TrangThai }}</td>
+
+                                               <!-- <td>
+                                               
+                                                 <button class="btn btn-danger fa fa-trash"  (click)="emoveItem(item.id)">Xóa</button>
+                                               </td>
+                                               <td>
+                                                 <button class="btn btn-warning fa fa-pencil" (click)="editItem(item.id, item.TheLoai)">Sửa</button>
+                                               </td>
+                                               <td>
+                                                 <button class ="btn btn-info fa fa-eye" (click)="editItem(item.id, item.TheLoai)">Xem</button>
+                                               </td> -->
+                                               <td>
+                                                 <a (click)="edithoadonban(item.id, item.MaKhachHang,item.Hoten,item.sdt, item.Email,item.Diachi,item.Ngaydat,item.Tong,item.TrangThai )" class="btn btn-warning">Sửa</a>
+                                                 <a (click)="redirectToDetailPage(item)"  class="btn btn-info fa fa-eye"></a>
+                                                 <a (click)="removehoadonban(item.id)" class="btn btn-danger">Xóa</a>
+                                                 
+                                             </td>
+                                       
+                                       
+                                       </tbody>
+                                   </table>
+                               </div>
+                           </div>
+                       </div>

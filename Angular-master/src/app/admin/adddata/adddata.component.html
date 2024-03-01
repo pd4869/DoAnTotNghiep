@@ -1,0 +1,13 @@
+<!-- your-component.component.html -->
+
+<div>
+  <h2>Thêm loại sách</h2>
+
+  <!-- Simple form to input Tenloai -->
+  <form #addItemForm="ngForm" (ngSubmit)="addNewItem(addItemForm.value.TheLoai)">
+    <label for="TheLoai">Thể loại:</label>
+    <input type="text" id="TheLoai" name="TheLoai" ngModel required>
+
+    <button type="submit">Thêm</button>
+  </form>
+</div>

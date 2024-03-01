@@ -1,0 +1,532 @@
+<section class="hero-section">
+    <div>
+        <div class="single-hero-items set-bg" data-setbg="assets/nguoidung/img/bg2.png" style="height: 500px; ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <span></span>
+                        <h1></h1>
+                        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore</p> -->
+                        <!-- <a href="#" class="primary-btn">Mua ngay</a> -->
+                    </div>
+                </div>
+                <div class="off-card">
+                </div>
+            </div>
+        </div>
+        <!-- <div class="single-hero-items set-bg" data-setbg="assets/nguoidung/img/hero-2.jpg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <span>Bag,kids</span>
+                        <h1>Black friday</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore</p>
+                        <a href="#" class="primary-btn">Shop Now</a>
+                    </div>
+                </div>
+                <div class="off-card">
+                    <h2>Sale <span>50%</span></h2>
+                </div>
+            </div>
+        </div> -->
+    </div>
+</section> 
+<div class="banner-section spad">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="single-banner">
+                    <img src="https://sunrisemarketplace.com/wp-content/uploads/2017/09/SMP-books-banner.jpg" alt="">
+                    <div class="inner-text">
+                        <h4>Sách mới</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="single-banner">
+                    <img src="https://t4.ftcdn.net/jpg/05/44/54/69/360_F_544546950_Xi80k2ppry7rqKQQYsSNVmuaAILUiki9.jpg" alt="">
+                    <div class="inner-text">
+                        <h4>Sách hay</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="single-banner">
+                    <img src="https://file.hstatic.net/1000230347/collection/sach_kinh_te_1920x600_992fcadb32fb46c18f3c1e49f947fbb4.png" alt="">
+                    <div class="inner-text">
+                        <h4>Best seller</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Banner Section End -->
+
+<!-- Women Banner Section Begin -->
+<section class="women-banner spad">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2">
+                <div class="product-large set-bg" data-setbg="https://bizweb.dktcdn.net/100/197/269/products/tam-ly-hoc-thanh-cong-304x472.jpg?v=1516592128997">
+                    <h2>Tâm lý</h2>
+                    <!-- <a href="#">Xem ngay</a> -->
+                </div>
+            </div>
+            <div class="col-lg-9 offset-lg-1">
+                <div class="filter-control">
+                    <ul>
+                        <li class="active">Best seller</li>
+                        <li>Sách mới</li>
+                        <li>Sách hay</li>
+                    </ul>
+                </div>
+                <div>
+                    <div *ngFor="let item of subjects; let i = index" data-wow-delay="0.3s" > 
+                        <div class="product-item"style="width: 25% ;float: left ; " *ngIf=" i <12 ">
+                            <div class="pi-pic" >
+                                <img src="{{item.Anh}} "style="height: 250px;" alt="">
+                                <div class="sale">Sale</div>
+                                <div class="icon">
+                                    <i class="icon_heart_alt"></i>
+                                </div>
+                                
+                                <!-- <ul>
+                                    <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
+                                    <li class="quick-view"><a href="#">+ Quick View</a></li>
+                                    <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
+                                </ul> -->
+                            </div>
+                            <div class="pi-text">
+                                <!-- <div class="catagory-name">Coat</div> -->
+                                <a href="/users/chitiet/{{item.id}}">
+                                    <h5>{{item.TenSach}}</h5>
+                                </a>
+                                <div class="product-price">
+                                    {{ formatCurrency(item.Gia) }} đ
+                                    <span>{{ formatCurrency(item.GiaCu) }}đ <!-- VNĐ --></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+<!--                     <div class="product-item"style="width:30% ;float: left ;">
+                        <div class="pi-pic">
+                            <img src="assets/nguoidung/img/products/women-2.jpg" alt="">
+                            <div class="icon">
+                                <i class="icon_heart_alt"></i>
+                            </div>
+                            <ul>
+                                <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
+                                <li class="quick-view"><a href="#">+ Quick View</a></li>
+                                <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="pi-text">
+                            <div class="catagory-name">Shoes</div>
+                            <a href="#">
+                                <h5>Guangzhou sweater</h5>
+                            </a>
+                            <div class="product-price">
+                                $13.00
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-item"style="width:30% ;float: left ;">
+                        <div class="pi-pic">
+                            <img src="assets/nguoidung/img/products/women-3.jpg" alt="">
+                            <div class="icon">
+                                <i class="icon_heart_alt"></i>
+                            </div>
+                            <ul>
+                                <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
+                                <li class="quick-view"><a href="#">+ Quick View</a></li>
+                                <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="pi-text">
+                            <div class="catagory-name">Towel</div>
+                            <a href="#">
+                                <h5>Pure Pineapple</h5>
+                            </a>
+                            <div class="product-price">
+                                $34.00
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-item"style="width:30% ;float: left ;">
+                        <div class="pi-pic">
+                            <img src="assets/nguoidung/img/products/women-4.jpg" alt="">
+                            <div class="icon">
+                                <i class="icon_heart_alt"></i>
+                            </div>
+                            <ul>
+                                <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
+                                <li class="quick-view"><a href="#">+ Quick View</a></li>
+                                <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="pi-text">
+                            <div class="catagory-name">Towel</div>
+                            <a href="#">
+                                <h5>Converse Shoes</h5>
+                            </a>
+                            <div class="product-price">
+                                $34.00
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Women Banner Section End -->
+
+<!-- Deal Of The Week Section Begin-->
+<section class="deal-of-week set-bg spad" data-setbg="./assets/nguoidung/img/bg1.png">
+    <div class="container">
+        <div class="col-lg-6 text-center">
+            <div class="section-title">
+                <h2 style="color: aliceblue;">Đặt trước bản giới hạn</h2>
+                <p style="color: rgb(0, 0, 0); font-size: 25px;">Thiên Quan Tứ Phúc 8 </p>
+                <div class="product-price">
+                    289,000đ
+                    
+                </div>
+            </div>
+            <!-- <div class="countdown-timer" id="countdown">
+                <div class="cd-item">
+                    <span>3</span>
+                    <p>Days</p>
+                </div>
+                <div class="cd-item">
+                    <span>12</span>
+                    <p>Hrs</p>
+                </div>
+                <div class="cd-item">
+                    <span>40</span>
+                    <p>Mins</p>
+                </div>
+                <div class="cd-item">
+                    <span>52</span>
+                    <p>Secs</p>
+                </div>
+            </div> -->
+            <a href="#" class="primary-btn">Mua ngay</a>
+        </div>
+    </div>
+</section>
+<!-- Deal Of The Week Section End -->
+
+<!-- Man Banner Section Begin -->
+<section class="man-banner spad">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="filter-control">
+                    <ul>
+                        
+                    </ul>
+                </div>
+                <div *ngFor="let item of subjects; let i = index" data-wow-delay="0.3s" > 
+                    <div class="product-item"style="width: 25% ;float: left ; " *ngIf=" i >20 && i <33 ">
+                        <div class="pi-pic" >
+                            <img src="{{item.Anh}} "style="height: 250px;" alt="">
+                            <div class="sale">Sale</div>
+                            <div class="icon">
+                                <i class="icon_heart_alt"></i>
+                            </div>
+                            <!-- <ul>
+                                <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
+                                <li class="quick-view"><a href="#">+ Quick View</a></li>
+                                <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
+                            </ul> -->
+                        </div>
+                        <div class="pi-text">
+                            <!-- <div class="catagory-name">Coat</div> -->
+                            <a href="#">
+                                <h5>{{item.TenSach}}</h5>
+                            </a>
+                            <div class="product-price">
+                                {{ formatCurrency(item.Gia) }} đ
+                                <span>{{ formatCurrency(item.GiaCu) }}đ <!-- VNĐ --></span>
+                            </div>
+                        </div>
+                    </div>
+<!--                     <div class="product-item"style="width:30% ;float: left ;">
+                        <div class="pi-pic">
+                            <img src="assets/nguoidung/img/products/man-2.jpg" alt="">
+                            <div class="icon">
+                                <i class="icon_heart_alt"></i>
+                            </div>
+                            <ul>
+                                <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
+                                <li class="quick-view"><a href="#">+ Quick View</a></li>
+                                <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="pi-text">
+                            <div class="catagory-name">Shoes</div>
+                            <a href="#">
+                                <h5>Guangzhou sweater</h5>
+                            </a>
+                            <div class="product-price">
+                                $13.00
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-item"style="width:30% ;float: left ;">
+                        <div class="pi-pic">
+                            <img src="assets/nguoidung/img/products/man-3.jpg" alt="">
+                            <div class="icon">
+                                <i class="icon_heart_alt"></i>
+                            </div>
+                            <ul>
+                                <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
+                                <li class="quick-view"><a href="#">+ Quick View</a></li>
+                                <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="pi-text">
+                            <div class="catagory-name">Towel</div>
+                            <a href="#">
+                                <h5>Pure Pineapple</h5>
+                            </a>
+                            <div class="product-price">
+                                $34.00
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-item"style="width:30% ;float: left ;">
+                        <div class="pi-pic">
+                            <img src="assets/nguoidung/img/products/man-4.jpg" alt="">
+                            <div class="icon">
+                                <i class="icon_heart_alt"></i>
+                            </div>
+                            <ul>
+                                <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
+                                <li class="quick-view"><a href="#">+ Quick View</a></li>
+                                <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="pi-text">
+                            <div class="catagory-name">Towel</div>
+                            <a href="#">
+                                <h5>Converse Shoes</h5>
+                            </a>
+                            <div class="product-price">
+                                $34.00
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+            <div class="col-lg-2 offset-lg-1">
+                <div class="product-large set-bg m-large" data-setbg="https://dammymoihoan.files.wordpress.com/2020/12/20201212.jpg">
+                    <!-- <h2>Truyện</h2> -->
+                    <a href="#">Thêm</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Man Banner Section End -->
+
+<!-- Instagram Section Begin -->
+<div class="instagram-photo">
+    <div class="insta-item set-bg" data-setbg="assets/nguoidung/img/insta-1.jpg">
+        <div class="inside-text">
+            <i class="ti-instagram"></i>
+            <h5><a href="#">colorlib_Collection</a></h5>
+        </div>
+    </div>
+    <div class="insta-item set-bg" data-setbg="assets/nguoidung/img/insta-2.jpg">
+        <div class="inside-text">
+            <i class="ti-instagram"></i>
+            <h5><a href="#">colorlib_Collection</a></h5>
+        </div>
+    </div>
+    <div class="insta-item set-bg" data-setbg="assets/nguoidung/img/insta-3.jpg">
+        <div class="inside-text">
+            <i class="ti-instagram"></i>
+            <h5><a href="#">colorlib_Collection</a></h5>
+        </div>
+    </div>
+    <div class="insta-item set-bg" data-setbg="assets/nguoidung/img/insta-4.jpg">
+        <div class="inside-text">
+            <i class="ti-instagram"></i>
+            <h5><a href="#">colorlib_Collection</a></h5>
+        </div>
+    </div>
+    <div class="insta-item set-bg" data-setbg="assets/nguoidung/img/insta-5.jpg">
+        <div class="inside-text">
+            <i class="ti-instagram"></i>
+            <h5><a href="#">colorlib_Collection</a></h5>
+        </div>
+    </div>
+    <div class="insta-item set-bg" data-setbg="assets/nguoidung/img/insta-6.jpg">
+        <div class="inside-text">
+            <i class="ti-instagram"></i>
+            <h5><a href="#">colorlib_Collection</a></h5>
+        </div>
+    </div>
+</div>
+<!-- Instagram Section End -->
+
+<!-- Latest Blog Section Begin -->
+<section class="latest-blog spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <h2>Blog</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="single-latest-blog">
+                    <img src="https://file.hstatic.net/200000271219/file/mot-nua-dich-thuc-review-1_ef7eb392999d40888ebea847771eca05_grande.jpg" alt="">
+                    <div class="latest-text">
+                        <div class="tag-list">
+                            <div class="tag-item">
+                                <i class="fa fa-calendar-o"></i>
+                                Th4,2019
+                            </div>
+                            <div class="tag-item">
+                                <i class="fa fa-comment-o"></i>
+                                5
+                            </div>
+                        </div>
+                        <a href="#">
+                            <h4>Một nửa đích thực</h4>
+                        </a>
+                        <p>Liệu người ta có thể tìm thấy một nửa đích thực của mình thông qua việc ghép cặp ADN? Và khi chúng ta gặp được người có mã gene phù hợp với mình, liệu ta có thể yêu họ từ cái nhìn đầu tiên, và sống bên họ hạnh phúc đến cuối cuộc đời?
+                          
+                            </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single-latest-blog">
+                    <img src="https://file.hstatic.net/200000271219/file/tuong_lai_sau_dai_dichcovid_4_30fe9077bb6440e582acb8f1cc4c921e_grande.jpg" alt="">
+                    <div class="latest-text">
+                        <div class="tag-list">
+                            <div class="tag-item">
+                                <i class="fa fa-calendar-o"></i>
+                                Th4,2033
+                            </div>
+                            <div class="tag-item">
+                                <i class="fa fa-comment-o"></i>
+                                5
+                            </div>
+                        </div>
+                        <a href="#">
+                            <h4>Tương lai sau đại dịch Covid</h4>
+                        </a>
+                        <p>Đại dịch Covid-19 xuất hiện và tác động tới thế giới trong gần hai năm qua. Đến nay, dù rất nhiều nghiên cứu, phát minh khoa học đã được đưa vào chăm sóc sức khỏe, nhiều chính sách, biện pháp đã được thực thi, song đại dịch vẫn chưa bị đẩy lùi.
+ 
+                            </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single-latest-blog">
+                    <img src="https://file.hstatic.net/200000271219/file/dsc09647_1425378d49d74053989c58e67f2dac59_grande.jpg" alt="">
+                    <div class="latest-text">
+                        <div class="tag-list">
+                            <div class="tag-item">
+                                <i class="fa fa-calendar-o"></i>
+                                Th 5, 2023
+                            </div>
+                            <div class="tag-item">
+                                <i class="fa fa-comment-o"></i>
+                                5
+                            </div>
+                        </div>
+                        <a href="#">
+                            <h4>Sách 'Cũ': Sắp xếp lại ký ức</h4>
+                        </a>
+                        <p>Tác giả Nick M lôi những món đồ, câu chuyện từ "nhà kho ký ức" ra ngắm nghía rồi xếp lại vào từng ngăn trong sách "Cũ".
+ 
+                           </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="benefit-items">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="single-benefit">
+                        <div class="sb-icon">
+                            <img src="assets/nguoidung/img/icon-1.png" alt="">
+                        </div>
+                        <div class="sb-text">
+                            <h6>Miễn phí giao hàng</h6>
+                            <p>Cho đơn từ 250k</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="single-benefit">
+                        <div class="sb-icon">
+                            <img src="assets/nguoidung/img/icon-2.png" alt="">
+                        </div>
+                        <div class="sb-text">
+                            <h6>Giao hàng nhanh</h6>
+                            <p>Hoàn tiền nếu hàng lỗi/ giả</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="single-benefit">
+                        <div class="sb-icon">
+                            <img src="assets/nguoidung/img/icon-1.png" alt="">
+                        </div>
+                        <div class="sb-text">
+                            <h6>Bảo mật thông tin khách</h6>
+                            <p>100% bảo mật</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Latest Blog Section End -->
+
+<!-- Partner Logo Section Begin -->
+<!-- <div class="partner-logo">
+    <div class="container">
+        <div class="logo-carousel owl-carousel">
+            <div class="logo-item">
+                <div class="tablecell-inner">
+                    <img src="assets/nguoidung/img/logo-carousel/logo-1.png" alt="">
+                </div>
+            </div>
+            <div class="logo-item">
+                <div class="tablecell-inner">
+                    <img src="assets/nguoidung/img/logo-carousel/logo-2.png" alt="">
+                </div>
+            </div>
+            <div class="logo-item">
+                <div class="tablecell-inner">
+                    <img src="assets/nguoidung/img/logo-carousel/logo-3.png" alt="">
+                </div>
+            </div>
+            <div class="logo-item">
+                <div class="tablecell-inner">
+                    <img src="assets/nguoidung/img/logo-carousel/logo-4.png" alt="">
+                </div>
+            </div>
+            <div class="logo-item">
+                <div class="tablecell-inner">
+                    <img src="assets/nguoidung/img/logo-carousel/logo-5.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+<!-- Partner Logo Section End -->

@@ -1,0 +1,48 @@
+<!-- your-component.component.html -->
+
+<div>
+    <h2>Thêm blog</h2>
+    <div class="tab-content rounded-bottom">
+      <div class="tab-pane p-3 active preview" role="tabpanel" id="preview-1272">
+    <!-- Simple form to input item details -->
+    <form #addItemForm="ngForm" (ngSubmit)="addNewItem(addItemForm.value)">
+      
+      <!-- <label for="MaLoai_id">MaLoai:</label>
+      <input type="text" id="MaLoai_id" name="MaLoai_id" ngModel required> -->
+  
+      <label for="TenBlog"></label>
+      <div class="input-group mb-3"><span class="input-group-text" id="TenBlog">Tiêu đề</span>
+  
+      <input type="text" id="TenBlog" name="TenBlog" ngModel required>
+      </div>
+    <label for="Anh"></label>
+      <div class="input-group mb-3"><span class="input-group-text" id="Anh">Ảnh</span>
+  
+      <input type="text" id="Anh" name="Anh" ngModel required>
+      <!-- <input type="file" (change)="onFileSelected($event)">
+      <button (click)="uploadFile()">Upload</button> -->
+      </div>
+
+      
+      <label for="Ngaynhap"></label>
+      <div class="input-group mb-3"><span class="input-group-text" id="Ngaynhap">Ngày nhập</span>
+      <input type="text" id="Ngaynhap" name="Ngaynhap" ngModel required>
+      </div>
+
+      <label for="MaNguoiDung"></label>
+      <div class="input-group mb-3"><span class="input-group-text" id="MaNguoiDung">Người tạo</span>
+  
+      <input type="text" id="MaNguoiDung" name="MaNguoiDung" ngModel required>
+      </div>
+      <label for="Mota"></label>
+      <div class="input-group mb-3"><span class="input-group-text" id="Mota">Mô tả</span>
+  
+      <input type="text" id="Mota" name="Mota" ngModel required>
+      </div>
+      
+      <button type="submit">Thêm</button>
+    </form>
+    </div>
+  </div>
+  </div>
+  

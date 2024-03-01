@@ -1,0 +1,58 @@
+
+
+<div>
+  
+    <div class="card shadow mb-4">
+                           <div class="card-header py-3">
+                               <h6 class="m-0 font-weight-bold text-primary">Quản lý hóa đơn nhập</h6>
+                           </div>
+                           
+                           <div class="card-body">
+                             <a class="btn btn-dark fa fa-plus" [routerLink]="['/admin/addhoadonnhap']">Thêm</a>
+   
+                               <div class="table-responsive">
+                                   <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                       <thead>
+                                           <tr>
+                                             <th>STT</th>
+                                             <th>Ngày nhập</th>
+                                             <th>Mã người dùng</th>
+                                             <th>Mã nhà xuất bản</th>
+                                             
+                                             <th></th>
+                                           </tr>
+                                       </thead>
+                                       
+                                       <tbody>
+                                           <tr *ngFor="let item of subjects;let i = index">
+                                               
+                                               <td>{{ i+1 }}</td>
+                                               <td>{{ item.NgayNhap }}</td>
+                                               
+                                               <td>{{ item.MaNguoiDung }}</td>
+                                               <td>{{ item.MaNXB }}</td>
+                                               
+
+                                               <!-- <td>
+                                               
+                                                 <button class="btn btn-danger fa fa-trash"  (click)="emoveItem(item.id)">Xóa</button>
+                                               </td>
+                                               <td>
+                                                 <button class="btn btn-warning fa fa-pencil" (click)="editItem(item.id, item.TheLoai)">Sửa</button>
+                                               </td>
+                                               <td>
+                                                 <button class ="btn btn-info fa fa-eye" (click)="editItem(item.id, item.TheLoai)">Xem</button>
+                                               </td> -->
+                                               <td>
+                                                 <a (click)="edithoadonnhap(item.id, item.NgayNhap,item.MaNguoiDung,item.MaNXB )" class="btn btn-warning">Sửa</a>
+                                                 <!-- <a (click)="edithoadonnhap(item.id,item.NgayNhap, item.MaNguoiDung,item.MaNXB)" class ="btn btn-info fa fa-eye">Xem</a> -->
+                                                 <a (click)="removehoadonnhap(item.id)" class="btn btn-danger">Xóa</a>
+                                                 
+                                             </td>
+                                       
+                                       
+                                       </tbody>
+                                   </table>
+                               </div>
+                           </div>
+                       </div>

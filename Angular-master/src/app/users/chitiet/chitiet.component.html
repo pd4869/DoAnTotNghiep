@@ -1,0 +1,501 @@
+    <!-- Breadcrumb Section Begin -->
+    <div class="breacrumb-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-text product-more">
+                        <a href="./home.html"><i class="fa fa-home"></i> Home</a>
+                        <a href="./shop.html">Shop</a>
+                        <span>Detail</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb Section Begin -->
+
+    <!-- Product Shop Section Begin -->
+    <section class="product-shop spad page-details">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="filter-widget">
+                        <h4 class="fw-title">Thể loại</h4>
+                        <ul class="filter-catagories">
+                            <li><a href="#">Chính Trị</a></li>
+                            <li><a href="#">Giáo dục</a></li>
+                            <li><a href="#">Khoa học</a></li>
+                            <li><a href="#">Tâm lý</a></li>
+                            <li><a href="#">Kinh tế</a></li>
+                            <li><a href="#">Lịch sử</a></li>
+                            <li><a href="#">Kinh điển</a></li>
+                            <li><a href="#">Lãng mạn</a></li>
+                        </ul>
+                    </div>
+                    <div class="filter-widget">
+                        <h4 class="fw-title">Nhà xuất bản</h4>
+                        <div class="fw-brand-check">
+                            <div class="bc-item">
+                                <label for="bc-calvin">
+                                    NXB Kim Đồng
+                                    <input type="checkbox" id="bc-calvin">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="bc-item">
+                                <label for="bc-diesel">
+                                    Trẻ
+                                    <input type="checkbox" id="bc-diesel">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="bc-item">
+                                <label for="bc-polo">
+                                    Cẩm Phong
+                                    <input type="checkbox" id="bc-polo">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="bc-item">
+                                <label for="bc-tommy">
+                                    Nhã Nam
+                                    <input type="checkbox" id="bc-tommy">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-widget">
+                        <h4 class="fw-title">Giá</h4>
+                        <div class="filter-range-wrap">
+                            <div class="range-slider">
+                                <div class="price-input">
+                                    <input type="text" id="minamount">
+                                    <input type="text" id="maxamount">
+                                </div>
+                            </div>
+                            <div class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"
+                                data-min="33" data-max="98">
+                                <div class="ui-slider-range ui-corner-all ui-widget-header"></div>
+                                <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
+                                <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
+                            </div>
+                        </div>
+                        <a href="#" class="filter-btn">Filter</a>
+                    </div>
+                    <div class="filter-widget">
+                        <!-- <h4 class="fw-title">Color</h4>
+                        <div class="fw-color-choose">
+                            <div class="cs-item">
+                                <input type="radio" id="cs-black">
+                                <label class="cs-black" for="cs-black">Black</label>
+                            </div>
+                            <div class="cs-item">
+                                <input type="radio" id="cs-violet">
+                                <label class="cs-violet" for="cs-violet">Violet</label>
+                            </div>
+                            <div class="cs-item">
+                                <input type="radio" id="cs-blue">
+                                <label class="cs-blue" for="cs-blue">Blue</label>
+                            </div>
+                            <div class="cs-item">
+                                <input type="radio" id="cs-yellow">
+                                <label class="cs-yellow" for="cs-yellow">Yellow</label>
+                            </div>
+                            <div class="cs-item">
+                                <input type="radio" id="cs-red">
+                                <label class="cs-red" for="cs-red">Red</label>
+                            </div>
+                            <div class="cs-item">
+                                <input type="radio" id="cs-green">
+                                <label class="cs-green" for="cs-green">Green</label>
+                            </div>
+                        </div> -->
+                    </div>
+                    <div class="filter-widget">
+                        <!-- <h4 class="fw-title">Size</h4>
+                        <div class="fw-size-choose">
+                            <div class="sc-item">
+                                <input type="radio" id="s-size">
+                                <label for="s-size">s</label>
+                            </div>
+                            <div class="sc-item">
+                                <input type="radio" id="m-size">
+                                <label for="m-size">m</label>
+                            </div>
+                            <div class="sc-item">
+                                <input type="radio" id="l-size">
+                                <label for="l-size">l</label>
+                            </div>
+                            <div class="sc-item">
+                                <input type="radio" id="xs-size">
+                                <label for="xs-size">xs</label>
+                            </div>
+                        </div> -->
+                    </div>
+                    <div class="filter-widget">
+                        <h4 class="fw-title">Tags</h4>
+                        <div class="fw-tags">
+                            <a href="#">Trinh thám</a>
+                            <a href="#">Tâm lý</a>
+                            <a href="#">Đam mỹ</a>
+                            <a href="#">Hài hước</a>
+                            <a href="#">Light novel</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="row" *ngFor="let product of product">
+                        <div class="col-lg-6">
+                            <div class="product-pic-zoom">
+                                <img style="width: 300px;"class="product-big-img" src="{{product.Anh}}" alt="" >
+                                <div class="zoom-icon">
+                                    <i class="fa fa-search-plus"></i>
+                                </div>
+                            </div>
+                            <div class="product-thumbs">
+              <!--                   <div class="product-thumbs-track ps-slider owl-carousel">
+                                    <div class="pt active" data-imgbigurl=""><img
+                                            src="{{product.Anh}}" alt=""></div>
+                                    <div class="pt" data-imgbigurl=""><img
+                                            src="{{product.Anh}}" alt=""></div>
+                                    <div class="pt" data-imgbigurl=""><img
+                                            src="{{product.Anh}}" alt=""></div>
+                                    <div class="pt" data-imgbigurl=""><img
+                                            src="{{product.Anh}}" alt=""></div>
+                                </div> -->
+                            </div> 
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="product-details">
+                                <div class="pd-title">
+                                    <!-- <span>oranges</span> -->
+                                    <h3>{{product.TenSach}}</h3>
+                                    <a href="#" class="heart-icon"><i class="icon_heart_alt"></i></a>
+                                </div>
+                                <div class="pd-rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <span>(5)</span>
+                                </div>
+                                <div class="pd-desc">
+                                    <!-- <p>Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor
+                                        sit amet, consectetur adipisicing elit, sed do mod tempor</p>
+                                     --><h4>{{ formatCurrency(product.Gia) }}đ <span>{{ formatCurrency(product.GiaCu) }}đ</span></h4>
+                                </div>
+<!--                                 <div class="pd-color">
+                                    <h6>Color</h6>
+                                    <div class="pd-color-choose">
+                                        <div class="cc-item">
+                                            <input type="radio" id="cc-black">
+                                            <label for="cc-black"></label>
+                                        </div>
+                                        <div class="cc-item">
+                                            <input type="radio" id="cc-yellow">
+                                            <label for="cc-yellow" class="cc-yellow"></label>
+                                        </div>
+                                        <div class="cc-item">
+                                            <input type="radio" id="cc-violet">
+                                            <label for="cc-violet" class="cc-violet"></label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pd-size-choose">
+                                    <div class="sc-item">
+                                        <input type="radio" id="sm-size">
+                                        <label for="sm-size">s</label>
+                                    </div>
+                                    <div class="sc-item">
+                                        <input type="radio" id="md-size">
+                                        <label for="md-size">m</label>
+                                    </div>
+                                    <div class="sc-item">
+                                        <input type="radio" id="lg-size">
+                                        <label for="lg-size">l</label>
+                                    </div>
+                                    <div class="sc-item">
+                                        <input type="radio" id="xl-size">
+                                        <label for="xl-size">xs</label>
+                                    </div>
+                                </div> -->
+                                <!-- <div class="quantity">
+                                    <div class="pro-qty">
+                                        <input type="text" value="1">
+                                    </div>
+                                    <a href="#" class="primary-btn pd-cart">Thêm vào giỏ</a>
+                                </div> -->
+                                <form class="cart clearfix mb-50 d-flex" method="post">
+                                    <div class="quantity">
+                                        <!-- <span class="qty-minus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><i class="fa fa-minus" aria-hidden="true"></i></span> -->
+                                        <span class="qty-minus" onclick=""><i class="fa fa-minus" aria-hidden="true"></i></span>
+                                        <input type="number" class="qty-text" id="qty" step="1" min="1" max="12" name="quantity" value="1">
+                                        <span class="qty-plus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                    </div>
+                                    <button type="submit" name="addtocart" value="5" (click)="addToCart(product)" class="primary-btn pd-cart">Thêm vào giỏ</button>
+                                </form>
+    
+                                <ul class="pd-tags">
+                                    <li><span>Số trang:{{product.sotrang}} trang</span>  </li>
+                                    <li><span>Kích thước: {{product.kichthuoc}} cm</span></li>
+                                </ul>
+                                <div class="pd-share">
+                                    <div class="p-code">Sku : {{product.id}}</div>
+                                    <div class="pd-social">
+                                        <a href="#"><i class="ti-facebook"></i></a>
+                                        <a href="#"><i class="ti-twitter-alt"></i></a>
+                                        <a href="#"><i class="ti-linkedin"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-tab">
+                        <div class="tab-item">
+                            <ul class="nav" role="tablist">
+                                <li>
+                                    <a class="active" data-toggle="tab" href="#tab-1" role="tab">Mô tả</a>
+                                </li>
+                                
+                                <li>
+                                    <a data-toggle="tab" href="#tab-3" role="tab">Bình luận</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-item-content"*ngFor="let product of product">
+                            <div class="tab-content">
+                                <div class="tab-pane fade-in active" id="tab-1" role="tabpanel">
+                                    <div class="product-content">
+                                        <div class="row" >
+                                            <div class="col-lg-7">
+                                                <h5>Mô tả</h5>
+                                                {{product.MoTa}}
+                                            </div>
+                                            <div class="col-lg-5">
+                                                <img src="{{product.Anh}}" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                                <div class="tab-pane fade" id="tab-2" role="tabpanel" >
+                                    <div class="specification-table" >
+                                        <table>
+                                            <tr>
+                                                <td class="p-catagory">Dánh giá</td>
+                                                <td>
+                                                    <div class="pd-rating">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star-o"></i>
+                                                        <span>(5)</span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr >
+                                                <td class="p-catagory" >Giá</td>
+                                                <td>
+                                                    <div class="p-price">{{product.Gia}}</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                
+                                            </tr>
+                                            <tr>
+                                                <td class="p-catagory">Ngày tạo</td>
+                                                <td>
+                                                    <div class="p-stock">{{product.NgayTao}}</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="p-catagory">Số trang</td>
+                                                <td>
+                                                    <div class="p-weight">{{product.sotrang}}</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="p-catagory">Kích thước</td>
+                                                <td>
+                                                    <div class="p-size">{{product.kichthuoc}}</div>
+                                                </td>
+                                            </tr>
+              
+                                            <tr>
+                                                <td class="p-catagory">Sku</td>
+                                                <td>
+                                                    <div class="p-code">{{product.id}}</div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="tab-3" role="tabpanel">
+                                    <div class="customer-review-option">
+                                        <h4>2 bình luận</h4>
+                                        <div class="comment-option">
+                                            <div class="co-item">
+                                                <div class="avatar-pic">
+                                                    <img src="assets/nguoidung/img/product-single/avatar-1.png" alt="">
+                                                </div>
+                                                <div class="avatar-text">
+                                                    <div class="at-rating">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star-o"></i>
+                                                    </div>
+                                                    <h5>Phan Anh <span>27-4-2023</span></h5>
+                                                    <div class="at-reply">Nice !</div>
+                                                </div>
+                                            </div>
+                                            <div class="co-item">
+                                                <div class="avatar-pic">
+                                                    <img src="assets/nguoidung/img/product-single/avatar-2.png" alt="">
+                                                </div>
+                                                <div class="avatar-text">
+                                                    <div class="at-rating">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star-o"></i>
+                                                    </div>
+                                                    <h5>Pan Pan <span>21-05-2023</span></h5>
+                                                    <div class="at-reply">Nice !</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="personal-rating">
+                                            <h6>Đánh giá</h6>
+                                            <div class="rating">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-o"></i>
+                                            </div>
+                                        </div>
+                                        <div class="leave-comment">
+                                            <h4>Để lại bình luận</h4>
+                                            <form action="#" class="comment-form">
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <input type="text" placeholder="Name">
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <input type="text" placeholder="Email">
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <textarea placeholder="Messages"></textarea>
+                                                        <button type="submit" class="site-btn">Gửi</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Product Shop Section End -->
+
+    <!-- Related Products Section End -->
+    <div class="related-products spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>Sản phẩm khác</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="padding-bottom: 150px;">
+                <div class="col-lg-3 col-sm-6">
+                    <div class="product-item" style="width: 200px; height: 260px;">
+                        <div class="pi-pic">
+                            <img src="https://cdn0.fahasa.com/media/catalog/product/b/_/b_a_tr_c_11.jpg" alt="">
+                            <div class="sale">Sale</div>
+                            <div class="icon">
+                                <i class="icon_heart_alt"></i>
+                            </div>
+                            
+                        </div>
+                        <div class="pi-text">
+                            <a href="#">
+                                <h5>Cắt Nghĩa Muộn Phiền Theo Tâm Lý Học</h5>
+                            </a>
+                            <div class="product-price">
+                                120,000đ
+                                <span>150,000đ</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="product-item" style="width: 200px; height: 260px;">
+                        <div class="pi-pic">
+                            <img src="https://cdn0.fahasa.com/media/catalog/product/8/9/8935235238626.jpg" alt="">
+                            <div class="icon">
+                                <i class="icon_heart_alt"></i>
+                            </div>
+                            
+                        </div>
+                        <div class="pi-text">
+                            <a href="#">
+                                <h5>1Q84 - TẬP 2</h5>
+                            </a>
+                            <div class="product-price">
+                                120,000
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="product-item" style="width: 200px; height: 260px;">
+                        <div class="pi-pic">
+                            <img src="https://cdn0.fahasa.com/media/catalog/product/8/9/8935235238992.jpg" alt="">
+                            <div class="icon">
+                                <i class="icon_heart_alt"></i>
+                            </div>
+                            
+                        </div>
+                        <div class="pi-text">
+                            <a href="#">
+                                <h5>1Q84 - TẬP 3</h5>
+                            </a>
+                            <div class="product-price">
+                                136,000d
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="product-item" style="width: 200px; height: 260px;">
+                        <div class="pi-pic">
+                            <img src="https://cdn0.fahasa.com/media/catalog/product/8/9/8935235238992.jpg "alt="">
+                            <div class="icon">
+                                <i class="icon_heart_alt"></i>
+                            </div>
+                            
+                        </div>
+                        <div class="pi-text">
+                            <a href="#">
+                                <h5>Qua đêm ở nhà các vua Nguyễn</h5>
+                            </a>
+                            <div class="product-price">
+                                100,000đ
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,62 @@
+
+
+<div>
+  
+    <div class="card shadow mb-4">
+                           <div class="card-header py-3">
+                               <h6 class="m-0 font-weight-bold text-primary">Quản lý tin tức</h6>
+                           </div>
+                           
+                           <div class="card-body">
+                             <a class="btn btn-dark fa fa-plus" [routerLink]="['/admin/addblog']">Thêm</a>
+   
+                               <div class="table-responsive">
+                                   <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                       <thead>
+                                           <tr>
+                                             <th>STT</th>
+                                             <th>Mã blog</th>
+                                             <th>Tên blog</th>
+                                             <th>Ảnh</th>
+                                             <th>Ngày nhập</th>
+                                             <th>Mã người dùng</th>
+                                             <th>Mô tả</th>
+                                             <th></th>
+                                           </tr>
+                                       </thead>
+                                       
+                                       <tbody>
+                                           <tr *ngFor="let item of subjects;let i = index">
+                                               
+                                               <td>{{ i+1 }}</td>
+                                               <td>{{ item.id }}</td>
+                                               
+                                               <td>{{ item.TenBlog }}</td>
+                                               <td><img src="{{item.Anh}}" alt="" style="width: 100px; height: auto;">
+                                               </td>
+                                               <td>{{ item.Ngaynhap }}</td>
+                                               <td>{{ item.MaNguoiDung }}</td>
+                                               <td>{{ item.Mota }}</td>
+                                               <!-- <td>
+                                               
+                                                 <button class="btn btn-danger fa fa-trash"  (click)="removeItem(item.id)">Xóa</button>
+                                               </td>
+                                               <td>
+                                                 <button class="btn btn-warning fa fa-pencil" (click)="editItem(item.id, item.TheLoai)">Sửa</button>
+                                               </td>
+                                               <td>
+                                                 <button class ="btn btn-info fa fa-eye" (click)="editItem(item.id, item.TheLoai)">Xem</button>
+                                               </td> -->
+                                               <td>
+                                                 <a (click)="editBlog(item.id, item.TenBlog,item.Anh,item.Ngaynhap, item.MaNguoiDung,item.Mota )"class="btn btn-warning" >Sửa</a>
+                                                 <!-- <a (click)="editBlog(item.id, item.TenBlog,item.Anh,item.Ngaynhap, item.MaNguoiDung,item.Mota)" class ="btn btn-info fa fa-eye"></a> -->
+                                                 <a (click)="removeBlog(item.id)"class="btn btn-danger" >Xóa</a>
+                                                 
+                                             </td>
+                                       
+                                       
+                                       </tbody>
+                                   </table>
+                               </div>
+                           </div>
+                       </div>

@@ -1,0 +1,8 @@
+// cart.service.ts
+export interface CartItem{
+    id: number;
+    MaLoai: number;
+    TenSach: string;
+    Anh: string;
+    SoLuong: number;
+  }

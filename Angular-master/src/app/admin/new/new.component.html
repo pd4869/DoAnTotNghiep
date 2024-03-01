@@ -1,0 +1,17 @@
+<h2>Sửa</h2>
+
+
+<form #editItemForm="ngForm" (ngSubmit)="editItem(editItemForm.value.id, editItemForm.value.TheLoai)">
+  <!-- <label for="id">Mã loại:</label>
+  <input type="number" id="id" name="id" [(ngModel)]="category.id" required>
+ -->
+  <label for="TheLoai">Thể loại:</label>
+  <div class="input-group mb-3">
+
+  <input class="form-control" type="text" id="TheLoai" name="TheLoai" [(ngModel)]="category.TheLoai" required>
+  <div class="tab-pane p-3 active preview" role="tabpanel" id="preview-1158">
+
+  <button type="submit">Sửa</button>
+  </div>
+  </div>
+</form>

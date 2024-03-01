@@ -1,0 +1,21 @@
+<h2>Sửa thể loại</h2>
+<div class="tab-content rounded-bottom">
+
+<!-- Simple form to edit TheLoai -->
+<form #editItemForm="ngForm" (ngSubmit)="editItem(editItemForm.value.id, editItemForm.value.TheLoai)">
+  <label for="id">Mã loại:</label>
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="MaLoai">Mã Loại</span>
+
+  <input type="number" id="id" name="id" ngModel required>
+
+  <label for="TheLoai">Thể loại:</label>
+  <div class="input-group mb-3">
+
+  <input type="text" id="TheLoai" name="TheLoai" ngModel required>
+  <input class="form-control" type="text" placeholder="Nhập thể loại" name="TheLoai" value="{{$loaisach->TheLoai}}"aria-label="Username" aria-describedby="basic-addon1">
+  <div class="tab-pane p-3 active preview" role="tabpanel" id="preview-1158">
+
+  <button class="btn btn-primary"  type="submit">Sửa</button>
+</form>
+</div>

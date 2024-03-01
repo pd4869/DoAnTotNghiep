@@ -1,0 +1,54 @@
+
+
+<div>
+  
+  <div class="card shadow mb-4">
+                         <div class="card-header py-3">
+                             <h6 class="m-0 font-weight-bold text-primary">Quản lý loại sách</h6>
+                         </div>
+                         
+                         <div class="card-body">
+                           <a class="btn btn-dark fa fa-plus" [routerLink]="['/admin/adddata']">Thêm</a>
+ 
+                             <div class="table-responsive">
+                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                     <thead>
+                                         <tr>
+                                           <th>STT</th>
+                                           <th>Mã loại</th>
+                                           <th>Thể loại</th>
+                                           <th></th>
+                                           
+                                         </tr>
+                                     </thead>
+                                     
+                                     <tbody>
+                                         <tr *ngFor="let item of subjects;let i = index">
+                                             
+                                             <td>{{ i+1 }}</td>
+                                             <td>{{ item.id }}</td>
+                                             
+                                             <td>{{ item.TheLoai }}</td>
+                                             <!-- <td>
+                                             
+                                               <button class="btn btn-danger fa fa-trash"  (click)="removeItem(item.id)">Xóa</button>
+                                             </td>
+                                             <td>
+                                               <button class="btn btn-warning fa fa-pencil" (click)="editItem(item.id, item.TheLoai)">Sửa</button>
+                                             </td>
+                                             <td>
+                                               <button class ="btn btn-info fa fa-eye" (click)="editItem(item.id, item.TheLoai)">Xem</button>
+                                             </td> -->
+                                             <td>
+                                               <a (click)="editItem(item.id, item.TheLoai)" class="btn btn-warning" > Sửa</a>
+                                               <!-- <a (click)="editItem(item.id, item.TheLoai)" class ="btn btn-info fa fa-eye"></a> -->
+                                               <a (click)="removeItem(item.id)" class="btn btn-danger">Xóa</a>
+                                               
+                                           </td>
+                                     
+                                     
+                                     </tbody>
+                                 </table>
+                             </div>
+                         </div>
+                     </div>

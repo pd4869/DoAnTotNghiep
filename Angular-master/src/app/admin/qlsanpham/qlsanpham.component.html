@@ -1,0 +1,70 @@
+
+
+<div>
+
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">Quản lý sản phẩm</h6>
+    </div>
+
+    <div class="card-body">
+      <a class="btn btn-dark fa fa-plus" [routerLink]="['/admin/adddatasp']">Thêm</a>
+
+      <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          <thead>
+            <tr>
+              <th>STT</th>
+              <th>Mã loại</th>
+              <th>Tên sách</th>
+              <th>Mô tả</th>
+              <th>Ảnh</th>
+              <th>Tác giả</th>
+              <th>Số lượng</th>
+              <th>Giá</th>
+              <th>Gía cũ</th>
+              <th>Số trang</th>
+              <th>Kích thước</th>
+              <th></th>
+              <!-- <th></th>
+                                            <th></th> -->
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let item of subjects ;let i = index" >
+              <td>{{i+1}}</td>
+              <td>{{item.MaLoai}}</td>
+              <td>{{item.TenSach}}</td>
+              <td>{{item.MoTa}}</td>
+              <td>
+                <!-- <img src="../assets/img/{{item.Anh}}" alt="" style="width: 100px; height: auto;"> -->
+                <img src="{{item.Anh}}" alt="" style="width: 100px; height: auto;">
+
+              </td>
+
+              
+              <td>{{item.TacGia}}</td>
+              <td>{{item.SoLuong}}</td>
+              <td>{{item.Gia}}</td>
+              <td>{{item.GiaCu}}</td>
+              <td>{{item.sotrang}}</td>
+              <td>{{item.kichthuoc}}</td>
+
+              <td>
+                <a (click)="editItemsp(item.id,item.MaLoai,item.TenSach,item.MoTa,item.Anh,item.MaNXB,item.TacGia,item.NgayTao,item.SoLuong,item.Gia,item.GiaCu,item.sotrang,item.kichthuoc)" class="btn btn-warning">Sửa</a>
+                <!-- <a (click)="editItemsp(item.id,item.MaLoai,item.TenSach,item.MoTa,item.Anh,item.MaNXB,item.TacGia,item.SoLuong,item.Gia,item.GiaCu,item.sotrang,item.kichthuoc)"class="btn btn-info"></a> -->
+                <a (click)="removeItemsp(item.id)" class="btn btn-danger ">Xóa</a>
+
+              </td>
+
+
+          </tbody>
+          
+        </table>
+        <!-- <pagination-controls style="text-align: center;" (pageChange)="p = $event"></pagination-controls> -->
+
+      </div>
+      
+    </div>
+  </div>
