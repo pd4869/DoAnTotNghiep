@@ -1,0 +1,47 @@
+<div>
+    <h3>Kết quả tìm kiếm</h3>
+
+    <div class="product-list">
+        <div class="row">
+            <div class="col-lg-2 col-sm-6" style=" margin: 3%;"  *ngFor="let product of products | paginate: { itemsPerPage: 20, currentPage: p } ">
+                <div class="product-item">
+                    <div class="pi-pic"  >
+                        <img src="/assets/img/uploads/{{product.Anh}}" style="height: auto; width: auto;" alt="">
+                        <div class="sale pp-sale">Sale</div>
+                        <div class="icon">
+                            <i class="icon_heart_alt"></i>
+                        </div>
+                        <!-- <ul>
+                            <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
+                            <li class="quick-view"><a href="#">+ Quick View</a></li>
+                            <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
+                        </ul> -->
+                    </div>
+                    <div class="pi-text">
+                        <a href="/users/chitiet/{{product.id}}">
+                            <h5>{{product.TenSach}}</h5>
+                        </a>
+                        <div class="product-price">
+                            {{ product.Gia| number}}đ
+                            <span>{{ product.GiaCu|number }}đ</span>
+                        </div>
+                    </div>
+                </div>
+            
+
+            </div>
+
+        </div>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+
+   <!--  <ul>
+      <li *ngFor="let product of products">
+        <p>{{ product.Anh }}</p>
+        <h3>{{ product.TenSach }}</h3>
+        
+        <p>Price: ${{ product.Gia }}</p>
+      </li>
+    </ul> -->
+  </div>
+  

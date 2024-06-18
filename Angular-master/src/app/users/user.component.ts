@@ -22,7 +22,7 @@ import { AfterViewInit, Component } from '@angular/core';
   ]
 })
 export class UserComponent implements AfterViewInit  {
-  title = 'Doan5';
+  title = 'DoAn_5';
   ngAfterViewInit(): void {
     var src = [  
     "assets/nguoidung/js/jquery-3.3.1.min.js",

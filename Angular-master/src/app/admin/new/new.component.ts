@@ -50,7 +50,7 @@ export class NewComponent implements OnInit{
         console.log('Item edited successfully', result);
         // You can handle the result as needed
         this.refreshList();
-        this.router.navigate(['/admin/data1']);
+        this.router.navigate(['/admin/loaisach']);
       },
      
     );

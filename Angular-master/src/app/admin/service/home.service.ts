@@ -14,8 +14,8 @@ export class HomeService {
 
     upload(file: any): Observable<any> {
       const formData = new FormData();
-      formData.append('Anh', file);
-      return this.http.post<any>('http://localhost:3000/upload', formData);
+      formData.append('Anh', file,file);
+      return this.http.post<any>('http://localhost:3000/sach/create', formData);
     }
 
     getListsp() : Observable<any[]> {
@@ -49,11 +49,11 @@ export class HomeService {
       return this.http.post<any>(url, body);
     }
 
-    editItemsp(id: number, Maloai: any, TenSach: any, MoTa: any, Anh: any, MaNXB: any, TacGia: any,    NgayTao:any, 
-    SoLuong: any, Gia: any, GiaCu: any, sotrang: any, kichthuoc: any): Observable<any> {
+    editItemsp(id: number,MaLoai: number,TenSach: string,  MoTa: string,Anh: string,      
+      MaNXB: number,TacGia: string, NgayTao:Date,SoLuong: number, Gia: number, GiaCu: number, sotrang: number,kichthuoc: string): Observable<any> {
       const url = `http://localhost:3000/sach/edit/${id}`;
       const body = {
-        Maloai: Maloai,
+        MaLoai: MaLoai,
         TenSach: TenSach,
         MoTa: MoTa,
         Anh: Anh,
@@ -92,14 +92,14 @@ export class HomeService {
       return this.http.get<any>(url);     
     }  
     editNgdung(id: number, 
-      HoTen: any, 
-      NgaySinh: any, 
-      GioiTinh: any, 
-      Anh: any, 
-      DiaChi: any, 
-      Email: any, 
-      DienThoai: any, 
-      TrangThai: any): Observable<any> {
+      HoTen: string, 
+      NgaySinh: Date, 
+      GioiTinh: string, 
+      Anh: string, 
+      DiaChi: string, 
+      Email: string, 
+      DienThoai: string, 
+      TrangThai: string): Observable<any> {
       const url = `http://localhost:3000/nguoidung/edit/${id}`;
       const body = {
         HoTen: HoTen, 
@@ -229,6 +229,7 @@ export class HomeService {
       const url = 'http://localhost:3000/nhaxuatban/add';
       return this.http.post<any>(url, newItem);
     }
+    
     //hoa don ban
     getListhoadonban() : Observable<any[]> {
       return this.http.get<any>('http://localhost:3000/hoadonban');
@@ -281,17 +282,22 @@ export class HomeService {
     const url = `http://localhost:3000/hoadonnhap/remove/${id}`;
     return this.http.get<any>(url);     
   }  
+  getListcthdn() : Observable<any[]> {
+    return this.http.get<any>('http://localhost:3000/hoadonnhap/cthdb');
+  }
+  
   edithoadonnhap(id: number, 
     NgayNhap: any, 
     MaNguoiDung: any, 
     MaNXB: any, 
+    tong:any
     ): Observable<any> {
     const url = `http://localhost:3000/hoadonnhap/edit/${id}`;
     const body = {
       NgayNhap: NgayNhap,
       MaNguoiDung: MaNguoiDung,
       MaNXB: MaNXB,
-     
+     tong: tong
 
     };
 
@@ -301,6 +307,8 @@ export class HomeService {
     const url = 'http://localhost:3000/hoadonnhap/add';
     return this.http.post<any>(url, newItem);
 }
+
+
   getListcthdb() : Observable<any[]> {
     return this.http.get<any>('http://localhost:3000/hoadonban/cthdb');
   }
@@ -313,4 +321,30 @@ export class HomeService {
     const url = `http://localhost:3000/hoadonban/ctdh/get-one/${id}`;
     return this.http.get<any>(url);
   }
+  getItemByIdcthdn(id: any): Observable<any> {
+    const url = `http://localhost:3000/hoadonnhap/cthdn/get-one/${id}`;
+    return this.http.get<any>(url);
+  }
+  suatrangthai(id: number, Trangthai: any): Observable<any> {
+    const url = `http://localhost:3000/hoadonban/edit/${id}`;
+    const body = { Trangthai: Trangthai };
+    return this.http.post<any>(url, body);
+  }
+  getthongke() : Observable<any[]> {
+    return this.http.get<any>('http://localhost:3000/hoadonban/thongkedoanhthu');
+  }
+  getthongkenam() : Observable<any[]> {
+    return this.http.get<any>('http://localhost:3000/hoadonban/thongkedoanhthunam');
+  }
+  addHoaDonNhap(hoaDonNhap: any): Observable<any> {
+    const url = 'http://localhost:3000/hoadonnhap/create';
+    return this.http.post<any>(url, hoaDonNhap);
+}
+  updateOrderStatus(hoadonban: any): Observable<any> {
+   /*  const url =  `http://localhost:3000/hoadonban/update-status/${id}` ;
+    const body ={ Trangthai: Trangthai }
+  return this.http.put<any>(url, body); */
+  return this.http.put<any>(`http://localhost:3000/hoadonban/update-status/${hoadonban.id}`, { Trangthai: hoadonban.Trangthai });
+
+}
 }

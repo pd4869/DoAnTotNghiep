@@ -1,6 +1,8 @@
 import { Component , OnInit} from '@angular/core';
 import { HomeService } from '../service/home.service';
 import { Router } from '@angular/router';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-addblog',
@@ -13,12 +15,30 @@ import { Router } from '@angular/router';
 ]
 })
 export class AddblogComponent implements OnInit{
-  constructor(private api : HomeService, private router: Router) {}
+  constructor(private api : HomeService, private router: Router, private fb: FormBuilder) {
+    this.myForm = this.fb.group({
+      content: ['']})
+
+  }
   // subjects: any;
   selectedFile: any;
   selectedItem: any | null = null;
   subjects: any[] = [];
+  MoTa :any;
+  public Editor = ClassicEditor;
 
+  public myForm: FormGroup;
+  public config = {
+    toolbar: {
+      shouldNotGroupWhenFull: true,
+      items: [
+        'heading', '|',
+        'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote', '|',
+        'undo', 'redo'
+      ]
+    },
+    height: 300 // Chiều cao của vùng nhập liệu
+  };
   addNewItem(itemData: any): void {
     
     this.api.addItemblog(itemData).subscribe(

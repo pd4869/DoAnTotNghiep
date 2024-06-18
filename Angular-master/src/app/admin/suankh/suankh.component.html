@@ -1,0 +1,43 @@
+<h2>Sửa</h2>
+
+
+<form #editItemForm="ngForm" (ngSubmit)="editItem(editItemForm.value.id, editItemForm.value.TenKhachHang,editItemForm.value.DiaChi,editItemForm.value.SoDienThoai,editItemForm.value.Email)">
+  <label for="id">Mã Khách:</label>
+  <input type="number" id="id" name="id" [(ngModel)]="category.id" required>
+
+ <div class="form-group">
+
+  <label for="TenKhachHang">Họ tên:</label>
+  <div class="input-group mb-3">
+
+  <input class="form-control" type="text" id="TenKhachHang" name="TenKhachHang" [(ngModel)]="category.TenKhachHang" class="form-control"required>
+  </div></div>
+  <div class="form-group">
+
+    <label for="DiaChi">Địa chỉ:</label>
+    <div class="input-group mb-3">
+  
+    <input class="form-control" type="text" id="DiaChi" name="DiaChi" [(ngModel)]="category.DiaChi" class="form-control"required>
+    </div></div>
+    <div class="form-group">
+
+        <label for="SoDienThoai">Sđt:</label>
+        <div class="input-group mb-3">
+      
+        <input class="form-control" type="text" id="SoDienThoai" name="SoDienThoai" [(ngModel)]="category.SoDienThoai" class="form-control"required>
+
+        </div></div>
+        <div class="form-group">
+
+            <label for="Email">Email:</label>
+            <div class="input-group mb-3">
+          
+            <input class="form-control" type="text" id="Email" name="Email" [(ngModel)]="category.Email" class="form-control"required>
+            </div>
+         </div>    
+  <div class="tab-pane p-3 active preview" role="tabpanel" id="preview-1158">
+  </div>
+  <button type="submit" class="btn btn-primary">Sửa</button>
+  
+  
+</form>

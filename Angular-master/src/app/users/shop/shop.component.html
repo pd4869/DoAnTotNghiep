@@ -16,7 +16,7 @@
 <section class="product-shop spad">
     <div class="container">
         <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-8 order-2 order-lg-1 produts-sidebar-filter">
+            <div class="col-lg-2 col-md-6 col-sm-8 order-2 order-lg-1 produts-sidebar-filter">
                 <div class="filter-widget">
                     <h4 class="fw-title">Thể loại</h4>
                     <ul class="filter-catagories" *ngFor="let item of subjects">
@@ -137,7 +137,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-9 order-1 order-lg-2">
+            <div class="col-lg-10 order-1 order-lg-2">
                 <div class="product-show-option">
                     <div class="row">
                         <div class="col-lg-7 col-md-7">
@@ -151,17 +151,16 @@
                             </div> -->
                         </div>
                         <div class="col-lg-5 col-md-5 text-right">
-                            <p> 01- 09 trong 36 </p>
                         </div>
                     </div>
                 </div> 
             
                 <div class="product-list">
                     <div class="row">
-                        <div class="col-lg-3 col-sm-6" *ngFor="let product of products">
+                        <div class="col-lg-3 col-sm-6" *ngFor="let product of products | paginate: { itemsPerPage: 20, currentPage: p } ">
                             <div class="product-item">
-                                <div class="pi-pic" style="width: 260px" >
-                                    <img src="{{product.Anh}}" style="height: 260px;" alt="">
+                                <div class="pi-pic"  >
+                                    <img src="/assets/img/uploads/{{product.Anh}}" style="height: auto; width: auto;" alt="">
                                     <div class="sale pp-sale">Sale</div>
                                     <div class="icon">
                                         <i class="icon_heart_alt"></i>
@@ -182,16 +181,19 @@
                                     </div>
                                 </div>
                             </div>
+                        
+
                         </div>
 
                     </div>
+                    <pagination-controls (pageChange)="p = $event"></pagination-controls>
                 </div>
-                <div class="loading-more">
+               <!--  <div class="loading-more">
                     <i class="icon_loading"></i>
                     <a href="#">
                         Loading More
                     </a>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

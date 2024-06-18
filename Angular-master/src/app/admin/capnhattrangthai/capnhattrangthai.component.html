@@ -1,0 +1,14 @@
+<!-- update-status.component.html -->
+<form [formGroup]="updateStatusForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="id">Mã Đơn Hàng:</label>
+    <input id="id" formControlName="id" type="text" class="form-control" readonly>
+  </div>
+  <div>
+    <label for="Trangthai">Trạng Thái:</label>
+    <select id="Trangthai" formControlName="Trangthai" class="form-control">
+      <option *ngFor="let status of orderStatusList" [value]="status">{{ status }} </option>
+    </select>
+  </div>
+  <button type="submit" class="btn btn-primary">Cập Nhật </button>
+</form>

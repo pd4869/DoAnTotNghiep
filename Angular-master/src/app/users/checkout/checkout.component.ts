@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { CartService } from '../service/cart.service';
-import { HomeService } from '../service/home.service';
+import { CartService } from '../Model/service/cart.service';
+import { HomeService } from '../Model/service/home.service';
 import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import dateFormat, { masks } from "dateformat";
+import {formatDate} from '@angular/common';
+
+
 @Component({
   selector: 'app-checkout',
   templateUrl: './checkout.component.html',
@@ -29,12 +33,16 @@ export class CheckoutComponent implements OnInit {
 
   ngOnInit(): void {
     // Tạo orderForm trước khi gọi service để lấy dữ liệu từ cart
+    
     this.orderForm = this.formBuilder.group({
       Hoten: ['', Validators.required],
       Diachi: ['', Validators.required],
+      Ngaydat: [formatDate(new Date(), 'yyyy/MM/dd', 'en'), Validators.required],
       sdt: ['', [Validators.required]],
       Email: ['', [Validators.required, Validators.email]],
+      Tong: [this.cartService.getTotalPrice(), Validators.required], 
       Sanphamjson: this.formBuilder.array([]),
+      
     });
 
 
@@ -63,9 +71,9 @@ export class CheckoutComponent implements OnInit {
       MaSach: [item.id, Validators.required],
       TenSach: [item.TenSach, Validators.required],
       Anh: [item.Anh], // Thêm thông tin hình ảnh nếu có
-      SoLuong: [item.SoLuong, [Validators.required, Validators.min(0)]],
+      SoLuong: [item.quantity, [Validators.required, Validators.min(0)]],
       Gia: [item.Gia, [Validators.required, Validators.min(0)]],
-      Tongtien: [item.Gia* item.SoLuong], // Bạn có thể thêm validators nếu cần
+      Tongtien: [item.Gia* item.quantity], // Bạn có thể thêm validators nếu cần
     });
   }
 

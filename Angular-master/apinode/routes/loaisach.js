@@ -31,6 +31,7 @@ router.get('/get-one/:id',function(req,res){
 
 });
  */
+
 router.post('/edit/:id',function(req, res) {
     var TheLoai = req.body.TheLoai;
     var id = req.params.id;
@@ -45,6 +46,20 @@ router.post('/edit/:id',function(req, res) {
         res.json(result);
     });
 });
+
+router.post('/saveFileName', (req, res) => {
+    const { Anh } = req.body;
+    
+    const query = "INSERT INTO loaisach (Anh) VALUES (?)";
+    
+    db.query(query, [Anh], (err, result) => {
+      if (err) {
+        console.error(err);
+        return res.status(500).send('Lỗi truy vấn');
+      }
+      res.json(result);
+    });
+  });
 router.post('/add',function(req,res){
     var TheLoai= req.body.TheLoai;
     var query="insert into loaisach (TheLoai) values('"+TheLoai+"')";

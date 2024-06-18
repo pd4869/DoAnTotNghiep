@@ -17,8 +17,15 @@ import { AddkhachhangComponent } from './addkhachhang/addkhachhang.component';
 import { AddblogComponent } from './addblog/addblog.component';
 import { AddnxbComponent } from './addnxb/addnxb.component';
 import { AddngdungComponent } from './addngdung/addngdung.component';
-
-
+import { CapnhattrangthaiComponent } from './capnhattrangthai/capnhattrangthai.component';
+import { ThongkeComponent } from './thongke/thongke.component';
+import { SuablogComponent } from './suablog/suablog.component';
+import {SuahdnComponent} from './suahdn/suahdn.component';
+import { SuangdungComponent } from './suangdung/suangdung.component';
+import { SuankhComponent } from './suankh/suankh.component';
+import { SuanxbComponent } from './suanxb/suanxb.component';
+import { AddhoadonnhapComponent } from './addhoadonnhap/addhoadonnhap.component';
+import { CthdnComponent } from './cthdn/cthdn.component';
 const routes: Routes = [
 
   
@@ -40,7 +47,10 @@ const routes: Routes = [
     component:AddataspComponent
   },
  
-  
+  {
+    path:'addhoadonnhap',
+    component:AddhoadonnhapComponent
+  },
   {
     path:'editdata/:id',
     component:NewComponent
@@ -75,8 +85,16 @@ const routes: Routes = [
   
   },
   {
+    path: 'suatrangthai/:id',
+    component:CapnhattrangthaiComponent
+  },
+  {
     path:'cthdb/:id',
     component:CthdbComponent
+  },
+  {
+    path:'cthdn/:id',
+    component:CthdnComponent
   },
   {
     path:'addblog',
@@ -94,7 +112,32 @@ const routes: Routes = [
     path:'addnxb',
     component:AddnxbComponent
   },
-  
+  {
+    path:'thongke',
+    component:ThongkeComponent
+  },
+  {
+    path:'suablog/:id',
+    component:SuablogComponent
+  },
+  {
+    path:'suahdn/:id',
+    component:SuahdnComponent
+  },
+  {
+    
+      path:'Suakh/:id',
+      component:SuankhComponent
+    
+  },
+  {
+    path:'suanxb/:id',
+    component:SuanxbComponent
+  },
+  {
+    path:'suanguoidung/:id',
+    component:SuangdungComponent
+  },
 ];
 
 @NgModule({

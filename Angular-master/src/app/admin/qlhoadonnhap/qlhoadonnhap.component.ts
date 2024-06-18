@@ -11,7 +11,8 @@ import { Router } from '@angular/router';
 })
 export class QlhoadonnhapComponent {
   constructor(private api : HomeService, private router: Router) {}
-    
+  p : number = 1;
+
   subjects: any;
   selectedItem: any | null = null;
 ngOnInit(): void {
@@ -38,9 +39,11 @@ edithoadonnhap(id: number,
   NgayNhap: any, 
   MaNguoiDung: any, 
   MaNXB: any, 
+  tong: any, 
+
  ): void {
   this.router.navigate(['/admin/edithoadonnhap', id]);
-  this.api.edithoadonnhap(id, NgayNhap, MaNguoiDung, MaNXB).subscribe(
+  this.api.edithoadonnhap(id, NgayNhap, MaNguoiDung, MaNXB,tong ).subscribe(
     result => {
       console.log('Item edited successfully', result);
       // You can handle the result as needed
@@ -82,7 +85,10 @@ addhoadonnhap(itemData: any): void {
     }
   );
 }
-
+redirectToDetailPage(item: any): void {
+  // Navigate to the detail page with the product ID
+  this.router.navigate(['/admin/cthdn/', item.id]);
+}
 
 private refreshList(): void {
   this.api.getListhoadonnhap().subscribe(list => {

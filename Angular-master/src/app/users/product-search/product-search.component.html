@@ -1,0 +1,17 @@
+<!-- client/src/app/product-search/product-search.component.html -->
+<div class="col-lg-7 col-md-7">
+    <div class="advanced-search">
+<div class="input-group">
+        <input type="text" class="form-control"  [(ngModel)]="query" placeholder="Tìm sản phẩm" />
+    <button type="button" class="btn btn-primary" (click)="search()">Tìm kiếm</button>
+    <ul>
+      <li *ngFor="let product of products">
+        <h3>{{ product.TenSach }}</h3>
+        <p>{{ product.Anh }}</p>
+        <p>${{ product.Gia }}</p>
+      </li>
+    </ul>
+  </div>
+    </div></div>
+  
+    

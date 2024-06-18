@@ -17,7 +17,7 @@ router.get('/get-one/:id',function(req,res){
 
     });
 });
-router.post('/edit/:id',function(req,res){
+/* router.post('/edit/:id',function(req,res){
     var HoTen = req.body.HoTen;
     var NgaySinh = req.body.NgaySinh;
     var GioiTinh = req.body.GioiTinh;
@@ -36,6 +36,33 @@ router.post('/edit/:id',function(req,res){
 
     });
 
+}); */
+
+router.post('/edit/:id', function(req, res) {
+    var HoTen = req.body.HoTen;
+    var NgaySinh = req.body.NgaySinh;
+    var GioiTinh = req.body.GioiTinh;
+    var Anh = req.body.Anh;
+    var DiaChi = req.body.DiaChi;
+    var Email = req.body.Email;
+    var DienThoai = req.body.DienThoai;
+    var TrangThai = req.body.TrangThai;
+    var id = req.params.id;
+    
+    // Kiểm tra dữ liệu đầu vào
+    if (!HoTen || !NgaySinh || !GioiTinh || !Anh || !DiaChi || !Email || !DienThoai || !TrangThai) {
+        return res.status(400).send('Thiếu thông tin cần thiết');
+    }
+
+    var query = "UPDATE nguoidung SET HoTen=?, NgaySinh=?, GioiTinh=?, Anh=?, DiaChi=?, Email=?, DienThoai=?, TrangThai=? WHERE id = ?";
+    
+    db.query(query, [HoTen, NgaySinh, GioiTinh, Anh, DiaChi, Email, DienThoai, TrangThai, id], function(error, result) {
+        if (error) {
+            console.error("Lỗi truy vấn: ", error);
+            return res.status(500).send('Lỗi câu lệnh truy vấn: ' + error.message);
+        }
+        res.json(result);
+    });
 });
 router.post('/add', function(req, res) {
     var HoTen = req.body.HoTen;

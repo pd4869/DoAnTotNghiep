@@ -38,7 +38,6 @@ editBlog(id: number,
   TenBlog: any, 
   Anh: any, 
   Ngaynhap: any, 
- 
   MaNguoiDung: any, 
   Mota: any, 
   ): void {

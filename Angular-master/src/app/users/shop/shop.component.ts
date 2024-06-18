@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HomeService } from '../service/home.service';
+import { HomeService } from '../Model/service/home.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CartService } from '../service/cart.service';
+import { CartService } from '../Model/service/cart.service';
 import { CurrencyPipe } from '@angular/common';
 import { DecimalPipe } from '@angular/common';
 
@@ -23,6 +23,7 @@ import { DecimalPipe } from '@angular/common';
 })
 export class ShopComponent implements OnInit  {
   constructor(private api : HomeService, private router: Router,private cartService: CartService,private currencyPipe: CurrencyPipe,private decimalPipe: DecimalPipe,  private route: ActivatedRoute,) {}
+  p: number =1;
   subjects: any;
   products: any;
   selectedItem: any | null = null;
@@ -54,6 +55,7 @@ formatCurrency(price: number | null): string {
 
   return formattedPrice ? formattedPrice.replace(/,/g, '.') : '';
 }
+
 onCategoryClick(event: Event, categoryId: any) {
   // Ngăn chặn sự kiện mặc định của thẻ 'a' để không làm mất hiệu ứng collapse
   event.preventDefault();

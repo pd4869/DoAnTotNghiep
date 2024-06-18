@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Router  } from '@angular/router';
 import { DecimalPipe } from '@angular/common';
-import { HomeService } from '../service/home.service';
-import { CartService } from '../service/cart.service';
+import { HomeService } from '../Model/service/home.service';
+import { CartService } from '../Model/service/cart.service';
 @Component({
   selector: 'app-chitiet',
   templateUrl: './chitiet.component.html',

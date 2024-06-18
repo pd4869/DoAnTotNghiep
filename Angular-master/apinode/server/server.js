@@ -1,9 +1,14 @@
 const express = require('express');
 const mysql2 = require('mysql2');
-
 const app = express();
 const port = 3000;
-
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const path = require('path');
+const multer = require('multer');
+app.use(bodyParser.json());
+app.use(cors());
+app.use(path)
 const connection = mysql2.createConnection({
   host: 'localhost',
   port: '3306',

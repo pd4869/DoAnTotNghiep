@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeService } from '../service/home.service';
 import { Router } from '@angular/router';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { CurrencyPipe } from '@angular/common';
+import { DecimalPipe } from '@angular/common';
 
 
 @Component({
@@ -13,6 +16,7 @@ import { Router } from '@angular/router';
 ]
 })
 export class QlsanphamComponent {
+  decimalPipe: any;
   constructor(private api : HomeService, private router: Router) {}
   p: number =1;
   subjects: any;
@@ -26,7 +30,17 @@ ngOnInit(): void {
   })
 }
 
+formatCurrency(price: number | null): string {
+  if (price === null) {
+    return 'N/A'; // hoặc giá trị mặc định khác tùy thuộc vào yêu cầu của bạn
+  }
 
+  const multipliedPrice = price ;
+
+  const formattedPrice = this.decimalPipe.transform(multipliedPrice, '1.0-0');
+
+  return formattedPrice ? formattedPrice.replace(/,/g, '.') : '';
+}
 
 removeItemsp(id: number): void {
   this.api.removeItemsp(id).subscribe(res => {

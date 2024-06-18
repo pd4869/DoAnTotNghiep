@@ -4,15 +4,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { NgxPaginationModule } from 'ngx-pagination';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-
-
+import { NgxPaginationModule } from 'ngx-pagination';
+import { ProductSearchComponent } from './users/product-search/product-search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    
+
    
    
   ],
@@ -21,12 +22,14 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NgxPaginationModule,
     BrowserAnimationsModule,
     MatSnackBarModule,
+    NgxPaginationModule
 
   ],
+  
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

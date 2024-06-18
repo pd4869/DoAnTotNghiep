@@ -10,13 +10,21 @@ var Router = require('./routes/data');
 var bodyparser = require('body-parser');
 const fileUpload = require('express-fileupload');
 const { process_params } = require('express/lib/router');
-
+const multer = require('multer')
+const upload = multer()
 var app = express();
 var cors=require('cors');
+// Đường dẫn đến thư mục chứa các tệp tĩnh
+const staticPath = path.join(__dirname, 'uploads'); // Thay 'public' bằng tên thư mục của bạn
+
+// Sử dụng middleware express.static để phục vụ các tệp từ thư mục public
+app.use(express.static(staticPath));
+
 app.use(cors());
 app.use(express.json());
 app.use(bodyparser.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(fileUpload());
 
 
 var loaisachRoute=require('./routes/loaisach');
@@ -67,7 +75,6 @@ app.use(function (req, res) {
   res.end(JSON.stringify(req.body, null, 2))
 })
 
-app.use(fileUpload());
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 

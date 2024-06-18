@@ -17,6 +17,15 @@ import { ContactComponent } from './contact/contact.component';
 import { Shop1Component } from './shop1/shop1.component';
 import { BlogdetailComponent } from './blogdetail/blogdetail.component';
 import { LoginComponent } from './login/login.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import dateFormat, { masks } from "dateformat";
+import { TextEditorComponentComponent } from './text-editor-component/text-editor-component.component';
+import { ProductSearchComponent } from './product-search/product-search.component';
+import { DisplayComponent } from './display/display.component';
+import { RouterModule, Routes } from '@angular/router';
+import { ProductService } from './product.service';
+
+
 
 @NgModule({
   declarations: [
@@ -29,18 +38,25 @@ import { LoginComponent } from './login/login.component';
     ShopComponent,
     Shop1Component,
     BlogdetailComponent,
-    LoginComponent 
+    LoginComponent,
+    TextEditorComponentComponent,
+    ProductSearchComponent,
+    DisplayComponent 
   ],
   imports: [
     CommonModule,
     UserRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule,
+    
+
   ],
   providers: [
     CurrencyPipe,
-    DecimalPipe
+    DecimalPipe,
+    ProductService
   ],
   bootstrap: [UserComponent]
 })

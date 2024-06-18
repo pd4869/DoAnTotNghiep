@@ -1,6 +1,6 @@
 <section class="hero-section">
     <div>
-        <div class="single-hero-items set-bg" data-setbg="assets/nguoidung/img/bg2.png" style="height: 500px; ">
+        <div class="single-hero-items set-bg" data-setbg="assets/nguoidung/img/slider_2.jpg" style="height: 500px; ">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-5">
@@ -85,9 +85,9 @@
                 </div>
                 <div>
                     <div *ngFor="let item of subjects; let i = index" data-wow-delay="0.3s" > 
-                        <div class="product-item"style="width: 25% ;float: left ; " *ngIf=" i <12 ">
-                            <div class="pi-pic" >
-                                <img src="{{item.Anh}} "style="height: 250px;" alt="">
+                        <div class="product-item"style="width: 25% ; float: right ; " *ngIf=" i <12 ">
+                            <div class="pi-pic" style="width: auto;">
+                                <img src="/assets/img/uploads/{{item.Anh}} "style="height: 250px;" alt="">
                                 <div class="sale">Sale</div>
                                 <div class="icon">
                                     <i class="icon_heart_alt"></i>
@@ -224,16 +224,16 @@
 <section class="man-banner spad">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-9">
+            <div class="col-lg-10">
                 <div class="filter-control">
                     <ul>
                         
                     </ul>
                 </div>
                 <div *ngFor="let item of subjects; let i = index" data-wow-delay="0.3s" > 
-                    <div class="product-item"style="width: 25% ;float: left ; " *ngIf=" i >20 && i <33 ">
-                        <div class="pi-pic" >
-                            <img src="{{item.Anh}} "style="height: 250px;" alt="">
+                    <div class="product-item"style="width: 25% ; float: left ; " *ngIf=" i >30 && i <43 ">
+                        <div class="pi-pic" style="width: auto;">
+                            <img src="/assets/img/uploads/{{item.Anh}} " style="height: auto;" alt="">
                             <div class="sale">Sale</div>
                             <div class="icon">
                                 <i class="icon_heart_alt"></i>
@@ -323,7 +323,7 @@
                     </div> -->
                 </div>
             </div>
-            <div class="col-lg-2 offset-lg-1">
+            <div class="col-lg-2 ">
                 <div class="product-large set-bg m-large" data-setbg="https://dammymoihoan.files.wordpress.com/2020/12/20201212.jpg">
                     <!-- <h2>Truyện</h2> -->
                     <a href="#">Thêm</a>

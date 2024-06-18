@@ -9,56 +9,64 @@
       
       <!-- <label for="MaLoai_id">MaLoai:</label>
       <input type="text" id="MaLoai_id" name="MaLoai_id" ngModel required> -->
-  
+      <div class="form-group">
+
       <label for="HoTen"></label>
       <div class="input-group mb-3"><span class="input-group-text" id="HoTen">Họ tên</span>
   
-      <input type="text" id="HoTen" name="HoTen" ngModel required>
-      </div>
+      <input type="text" id="HoTen" name="HoTen" ngModel class="form-control"  required>
+      </div></div>
+      <div class="form-group">
     <label for="Anh"></label>
       <div class="input-group mb-3"><span class="input-group-text" id="Anh">Ảnh</span>
   
-      <input type="text" id="Anh" name="Anh" ngModel required>
+      <input type="text" id="Anh" name="Anh" ngModel class="form-control"  required>
       <!-- <input type="file" (change)="onFileSelected($event)">
       <button (click)="uploadFile()">Upload</button> -->
-      </div>
+      </div></div>
 
-      
+      <div class="form-group">
       <label for="NgaySinh"></label>
       <div class="input-group mb-3"><span class="input-group-text" id="NgaySinh">Ngày sinh</span>
-      <input type="text" id="NgaySinh" name="NgaySinh" ngModel required>
-      </div>
-
+      <input type="text" id="NgaySinh" name="NgaySinh" ngModel class="form-control"  required>
+      </div></div>
+      <div class="form-group">
       <label for="GioiTinh"></label>
       <div class="input-group mb-3"><span class="input-group-text" id="GioiTinh">Giới tính</span>
   
-      <input type="text" id="GioiTinh" name="GioiTinh" ngModel required>
-      </div>
+      <input type="text" id="GioiTinh" name="GioiTinh" ngModel class="form-control"  required>
+      </div></div>
+
+      <div class="form-group">
       <label for="DiaChi"></label>
       <div class="input-group mb-3"><span class="input-group-text" id="DiaChi">Địa chỉ</span>
   
-      <input type="text" id="DiaChi" name="DiaChi" ngModel required>
-      </div>
+      <input type="text" id="DiaChi" name="DiaChi" ngModel class="form-control"  required>
+      </div></div>
       
+      <div class="form-group">
       <label for="Email"></label>
     <div class="input-group mb-3"><span class="input-group-text" id="Email">Email</span>
 
-    <input type="text" id="Email" name="Email" ngModel required>
-    </div>
+    <input type="text" id="Email" name="Email" ngModel class="form-control"  required>
+    </div></div>
 
+    <div class="form-group">
     <label for="DienThoai"></label>
     <div class="input-group mb-3"><span class="input-group-text" id="DienThoai">SĐT</span>
 
-    <input type="text" id="DienThoai" name="DienThoai" ngModel required>
-    </div>
+    <input type="text" id="DienThoai" name="DienThoai" ngModel class="form-control"  required>
+    </div></div>
+
+    <div class="form-group">
     <label for="TrangThai"></label>
     <div class="input-group mb-3"><span class="input-group-text" id="TrangThai">Trạng thái</span>
 
-    <input type="text" id="TrangThai" name="TrangThai" ngModel required>
-    </div>
+    <input type="text" id="TrangThai" name="TrangThai" ngModel class="form-control"  required>
+    </div></div>
 
     
-      <button type="submit">Thêm</button>
+      <button type="submit" class="btn btn-primary">Thêm</button>
     </form>
     </div>
   </div>

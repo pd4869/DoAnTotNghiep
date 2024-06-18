@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 })
 export class QlhoadonbanComponent implements OnInit {
   constructor(private api : HomeService, private router: Router) {}
-    
+  p : number = 1;
   subjects: any;
   selectedItem: any | null = null;
 ngOnInit(): void {
@@ -53,6 +53,20 @@ edithoadonban(id: number,
       console.log('Item edited successfully', result);
       // You can handle the result as needed
       this.refreshList();
+    },
+    
+  );
+}
+suatrangthai(id: number, 
+  
+  TrangThai: any, ): void {
+  this.router.navigate(['/admin/suatrangthai', id]);
+  this.api.suatrangthai(id, TrangThai).subscribe(
+    result => {
+      console.log('Item edited successfully', result);
+      // You can handle the result as needed
+      this.refreshList();
+
     },
     
   );
@@ -98,7 +112,10 @@ redirectToDetailPage(item: any): void {
   // Navigate to the detail page with the product ID
   this.router.navigate(['/admin/cthdb/', item.id]);
 }
-
+redirectToInHoaDon(item: any): void {
+  // Navigate to the detail page with the product ID
+  this.router.navigate(['/admin/hoadonban']);
+}
 private refreshList(): void {
   this.api.getListhoadonban().subscribe(list => {
     this.subjects = list;

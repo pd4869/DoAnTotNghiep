@@ -32,11 +32,11 @@
                         </thead>
                         <tbody *ngFor="let cartItem of cartItems">
                             <tr>
-                                <td class="cart-pic first-row"><img src="{{cartItem.Anh}}" alt="" style="width: 100px;"></td>
+                                <td class="cart-pic first-row"><img src="/assets/img/uploads/{{cartItem.Anh}}" alt="" style="width: 100px;"></td>
                                 <td class="cart-title first-row">
                                     <h5>{{cartItem.TenSach}}</h5>
                                 </td>
-                                <td class="p-price first-row">{{cartItem.Gia}}</td>
+                                <td class="p-price first-row">{{cartItem.Gia| number}}</td>
                                 <td class="qua-col first-row">
                                   
                                     <td class="quantity">
@@ -49,7 +49,7 @@
                                     <!-- <td class="total_price"><span>{{ cartItem.totalPrice }}đ</span></td>
                                     <td class="remove"> -->
                                 <!-- </td> -->
-                                <td class="total-price first-row">{{ cartItem.totalPrice }}đ</td>
+                                <td class="total-price first-row">{{ cartItem.totalPrice | number}}đ</td>
                                 <td class="remove">
                                     <a  (click)="removeFromCart(i)"><i class="fa fa-times" aria-hidden="true"></i></a>
                                 </td>
@@ -70,7 +70,7 @@
                     <div class="col-lg-4 offset-lg-4">
                         <div class="proceed-checkout">
                             <ul>
-                                <p>Tổng tiền: {{ total}} đ</p>
+                                <p>Tổng tiền: {{ total|number}} đ</p>
                             </ul>
                             <a href="/users/checkout" class="proceed-btn">Thanh toán</a>
                         </div>

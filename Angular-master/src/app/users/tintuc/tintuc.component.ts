@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { HomeService } from '../service/home.service';
+import { HomeService } from '../Model/service/home.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CartService } from '../service/cart.service';
+import { CartService } from '../Model/service/cart.service';
 import { CurrencyPipe } from '@angular/common';
 import { DecimalPipe } from '@angular/common';
 @Component({

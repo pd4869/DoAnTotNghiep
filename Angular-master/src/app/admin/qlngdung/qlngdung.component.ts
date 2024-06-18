@@ -44,7 +44,7 @@ export class QlngdungComponent  {
     Email: any, 
     DienThoai: any, 
     TrangThai: any, ): void {
-    this.router.navigate(['/admin/editdataNgdung', id]);
+    this.router.navigate(['/admin/suanguoidung', id]);
     this.api.editNgdung(id, HoTen, NgaySinh, GioiTinh, Anh, DiaChi, Email, DienThoai, TrangThai).subscribe(
       result => {
         console.log('Item edited successfully', result);

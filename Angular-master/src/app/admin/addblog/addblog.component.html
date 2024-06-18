@@ -9,38 +9,51 @@
       
       <!-- <label for="MaLoai_id">MaLoai:</label>
       <input type="text" id="MaLoai_id" name="MaLoai_id" ngModel required> -->
-  
+      <div class="form-group">
+
       <label for="TenBlog"></label>
       <div class="input-group mb-3"><span class="input-group-text" id="TenBlog">Tiêu đề</span>
   
-      <input type="text" id="TenBlog" name="TenBlog" ngModel required>
-      </div>
+      <input type="text" id="TenBlog" name="TenBlog" ngModel class="form-control" required>
+      </div></div>
+
+      <div class="form-group">
+
     <label for="Anh"></label>
       <div class="input-group mb-3"><span class="input-group-text" id="Anh">Ảnh</span>
   
-      <input type="text" id="Anh" name="Anh" ngModel required>
+      <input type="text" id="Anh" name="Anh" ngModel class="form-control" required>
       <!-- <input type="file" (change)="onFileSelected($event)">
       <button (click)="uploadFile()">Upload</button> -->
-      </div>
+      </div></div>
 
-      
+      <div class="form-group">
+
       <label for="Ngaynhap"></label>
       <div class="input-group mb-3"><span class="input-group-text" id="Ngaynhap">Ngày nhập</span>
-      <input type="text" id="Ngaynhap" name="Ngaynhap" ngModel required>
-      </div>
+      <input type="text" id="Ngaynhap" name="Ngaynhap" ngModel class="form-control" required>
+      </div></div>
+
+      <div class="form-group">
 
       <label for="MaNguoiDung"></label>
       <div class="input-group mb-3"><span class="input-group-text" id="MaNguoiDung">Người tạo</span>
   
-      <input type="text" id="MaNguoiDung" name="MaNguoiDung" ngModel required>
-      </div>
+      <input type="text" id="MaNguoiDung" name="MaNguoiDung" ngModel class="form-control" required>
+      </div></div>
+
+      <div class="form-group">
+
       <label for="Mota"></label>
-      <div class="input-group mb-3"><span class="input-group-text" id="Mota">Mô tả</span>
+      <!-- <div class="input-group mb-3"><span class="input-group-text" id="Mota">Mô tả</span>
   
-      <input type="text" id="Mota" name="Mota" ngModel required>
-      </div>
+      <input type="text" id="Mota" name="Mota" ngModel required> -->
+      <ckeditor [editor]="Editor" [(ngModel)]="MoTa" [config]="config" name="MoTa" id="MoTa" style="width: 77% !important;height: 300px;"></ckeditor>
+  
+    </div>
       
-      <button type="submit">Thêm</button>
+      <button type="submit" class="btn btn-primary">Thêm</button>
+      
     </form>
     </div>
   </div>

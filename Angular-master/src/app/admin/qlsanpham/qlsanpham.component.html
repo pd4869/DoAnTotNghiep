@@ -22,7 +22,7 @@
               <th>Tác giả</th>
               <th>Số lượng</th>
               <th>Giá</th>
-              <th>Gía cũ</th>
+              <th>Giá cũ</th>
               <th>Số trang</th>
               <th>Kích thước</th>
               <th></th>
@@ -32,22 +32,23 @@
           </thead>
 
           <tbody>
-            <tr *ngFor="let item of subjects ;let i = index" >
+            <tr *ngFor="let item of subjects | paginate: { itemsPerPage: 10, currentPage: p};let i = index "  >
               <td>{{i+1}}</td>
               <td>{{item.MaLoai}}</td>
               <td>{{item.TenSach}}</td>
               <td>{{item.MoTa}}</td>
               <td>
                 <!-- <img src="../assets/img/{{item.Anh}}" alt="" style="width: 100px; height: auto;"> -->
-                <img src="{{item.Anh}}" alt="" style="width: 100px; height: auto;">
-
+                <!-- <img src="/apinode/public/uploads/{{item.Anh}}" alt="" style="width: 100px; height: auto;"> -->
+                 
+                  <img src="/assets/img/uploads/{{item.Anh}}" alt="hình" style="width: 100px; height: auto;">
               </td>
 
               
               <td>{{item.TacGia}}</td>
               <td>{{item.SoLuong}}</td>
-              <td>{{item.Gia}}</td>
-              <td>{{item.GiaCu}}</td>
+              <td>{{item.Gia| number}}đ</td>
+              <td>{{item.GiaCu |number}}đ</td>
               <td>{{item.sotrang}}</td>
               <td>{{item.kichthuoc}}</td>
 
@@ -58,13 +59,13 @@
 
               </td>
 
-
           </tbody>
           
-        </table>
-        <!-- <pagination-controls style="text-align: center;" (pageChange)="p = $event"></pagination-controls> -->
+        </table>             
+         <pagination-controls (pageChange)="p = $event"></pagination-controls>
 
+        <!-- <pagination-controls style="text-align: center;" (pageChange)="p = $event"></pagination-controls> -->
+        
       </div>
       
     </div>
-  </div>

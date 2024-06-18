@@ -27,7 +27,7 @@ export class AddngdungComponent implements OnInit{
         console.log('Item added successfully', result);
         // You can handle the result as needed
         this.refreshList();
-        // this.router.navigate(['/admin/sanpham']);
+        this.router.navigate(['/admin/nguoidung']);
       }
     );
   }

@@ -26,7 +26,20 @@ import { AddkhachhangComponent } from './addkhachhang/addkhachhang.component';
 import { AddblogComponent } from './addblog/addblog.component';
 import { AddnxbComponent } from './addnxb/addnxb.component';
 import { AddhoadonnhapComponent } from './addhoadonnhap/addhoadonnhap.component';
-
+import { NgxPaginationModule } from 'ngx-pagination';
+import { ThongkeComponent } from './thongke/thongke.component';
+import { CapnhattrangthaiComponent } from './capnhattrangthai/capnhattrangthai.component';
+import { SuanvComponent } from './suanv/suanv.component';
+import { SuanxbComponent } from './suanxb/suanxb.component';
+import { SuankhComponent } from './suankh/suankh.component';
+import { SuangdungComponent } from './suangdung/suangdung.component';
+import { SuahdnComponent } from './suahdn/suahdn.component';
+import { SuablogComponent } from './suablog/suablog.component';
+import { CKEditorComponent, CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { ThongkedoanhthunamComponent } from './thongkedoanhthunam/thongkedoanhthunam.component';
+import { FileUploadComponent } from './file-upload/file-upload.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CthdnComponent } from './cthdn/cthdn.component';
 
 
 
@@ -53,7 +66,17 @@ import { AddhoadonnhapComponent } from './addhoadonnhap/addhoadonnhap.component'
     AddblogComponent,
     AddnxbComponent,
     AddhoadonnhapComponent,
-   
+    ThongkeComponent,
+    CapnhattrangthaiComponent,
+    SuanvComponent,
+    SuanxbComponent,
+    SuankhComponent,
+    SuangdungComponent,
+    SuahdnComponent,
+    SuablogComponent,
+    ThongkedoanhthunamComponent,
+    FileUploadComponent,
+    CthdnComponent,
    
   ],
   imports: [
@@ -61,6 +84,10 @@ import { AddhoadonnhapComponent } from './addhoadonnhap/addhoadonnhap.component'
     AdminRoutingModule,
     FormsModule,
     HttpClientModule,
+    NgxPaginationModule,
+    CKEditorModule,
+    ReactiveFormsModule,
+
   ],
   providers: [],
   bootstrap: [AdminComponent]

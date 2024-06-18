@@ -5,9 +5,12 @@
 
   <!-- Simple form to input Tenloai -->
   <form #addItemForm="ngForm" (ngSubmit)="addNewItem(addItemForm.value.TheLoai)">
-    <label for="TheLoai">Thể loại:</label>
-    <input type="text" id="TheLoai" name="TheLoai" ngModel required>
+    <div class="form-group">
 
-    <button type="submit">Thêm</button>
+    <label for="TheLoai">Thể loại:</label>
+    <input type="text" id="TheLoai" name="TheLoai" ngModel class="form-control"  required>
+
+    <button type="submit" class="btn btn-primary">Thêm</button>
+    </div>
   </form>
 </div>

@@ -1,1 +1,72 @@
-<p>addhoadonnhap works!</p>
+<div class ="container">
+  <h2>Thêm đơn nhập</h2>
+<form [formGroup]="hoaDonNhapForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    
+    <label for="NgayNhap">Ngày Nhập:</label>
+    <input id="NgayNhap" formControlName="NgayNhap" type="date" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="MaNXB">Nhà xuất bản:</label>
+    <select id="MaNXB" formControlName="MaNXB" class="form-control">
+      <option *ngFor="let subject of subjects" [value]="subject.id">{{ subject.TenNXB }}</option>
+    </select>
+    <!-- <select id="MaNXB" formControlName="MaNXB" [(ngModel)]="selectedMaNXB" class="form-control" type="number" required>
+      <option *ngFor="let subject of subjects" [value]="subject.id">{{ subject.TenNXB}}</option>
+    </select> -->
+  </div>
+    <!-- <input id="MaNXB" formControlName="MaNXB" type="number"> -->
+  
+
+    <div class="form-group">
+    <label for="MaNguoiDung">Nhân viên:</label>
+
+    <select id="MaNguoiDung" formControlName="MaNguoiDung" class="form-control">
+      <option *ngFor="let nguoidung of nguoidungs" [value]="nguoidung.id">{{ nguoidung.HoTen }}</option>
+    </select>
+    <!-- <select id="MaNguoiDung" formControlName="MaNguoiDung" [(ngModel)]="selectedMaNguoiDung" class="form-control" type="number" required>
+      <option *ngFor="let nguoidung of nguoidungs" [value]="nguoidung.id">{{ nguoidung.HoTen}}</option>
+    </select> -->
+    <!-- <input id="MaNguoiDung" formControlName="MaNguoiDung" type="number"> -->
+  </div>
+  <div formArrayName="chitiet">
+    <div *ngFor="let item of chitiet.controls; let i = index" [formGroupName]="i">
+      <div class="form-group">
+      <label for="MaSach">Mã Sách:</label>
+      <select id="MaSach" formControlName="MaSach" class="form-control">
+        <option *ngFor="let sach of sachs" [value]="sach.id">{{ sach.TenSach }}</option>
+      </select>
+    <!-- <select id="MaSach" formControlName="MaSach" [(ngModel)]="selectedSach" class="form-control" type="number" >
+      <option *ngFor="let sach of sachs" [value]="sach.id">{{ sach.TenSach}}</option>
+    </select> -->
+      <!-- <input id="MaSach" formControlName="MaSach" type="number"> -->
+      </div>
+
+      <div class="form-group">
+      <label for="SoLuong">Số Lượng:</label>
+      <input id="SoLuong" formControlName="SoLuong" class="form-control" type="number" (input)="calculateTotal(i)">
+      </div>
+
+      <div class="form-group">
+      <label for="GiaNhap">Giá Nhập:</label>
+      <input id="GiaNhap" formControlName="GiaNhap" class="form-control" type="number" (input)="calculateTotal(i)">
+      </div>
+
+      <div class="form-group">
+      <label for="tongtien">Tổng Tiền:</label>
+      <input id="tongtien" formControlName="tongtien" class="form-control" type="number" readonly>
+      </div>
+      <button type="button"  class="btn btn-warning" (click)="removeChiTiet(i)">Xóa</button>
+    </div>
+  </div>
+
+  <div class="form-group">    
+    <label for="tong">Tổng:</label>
+    <input id="tong" formControlName="tong" class="form-control" type="number" readonly>
+  </div>
+
+  <button type="button" class="btn btn-primary" (click)="addChiTiet()">Thêm Chi Tiết</button>
+
+  <button type="submit" class="btn btn-primary" [disabled]="hoaDonNhapForm.invalid">Lưu</button>
+</form>

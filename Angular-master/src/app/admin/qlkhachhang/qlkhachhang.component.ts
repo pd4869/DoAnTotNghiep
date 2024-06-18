@@ -42,7 +42,7 @@ editKhachhang(id: number,
   SoDienThoai: any, 
   Email: any, 
    ): void {
-  this.router.navigate(['/admin/editdataKhachhang', id]);
+  this.router.navigate(['/admin/Suakh', id]);
   this.api.editKhachhang(id, TenKhachHang, DiaChi, SoDienThoai, Email).subscribe(
     result => {
       console.log('Item edited successfully', result);

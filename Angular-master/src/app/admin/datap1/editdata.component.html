@@ -3,11 +3,13 @@
 
 <!-- Simple form to edit TheLoai -->
 <form #editItemForm="ngForm" (ngSubmit)="editItem(editItemForm.value.id, editItemForm.value.TheLoai)">
+  <div class="form-group">
+
   <label for="id">Mã loại:</label>
   <div class="input-group mb-3">
     <span class="input-group-text" id="MaLoai">Mã Loại</span>
 
-  <input type="number" id="id" name="id" ngModel required>
+  <input type="number" id="id" name="id" ngModel class="form-control" required>
 
   <label for="TheLoai">Thể loại:</label>
   <div class="input-group mb-3">
